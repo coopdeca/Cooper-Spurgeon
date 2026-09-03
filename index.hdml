@@ -1,16 +1,32 @@
-<section class="education">
-  <h2>Education &amp; Athletics</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+</head>
 
-  <p>
-    I earned my <strong>Marketing degree from Iowa State University</strong>,
-    along with a <strong>Sales Certificate</strong>. During my time at Iowa State,
-    I also competed as a member of the <strong>ISU Track &amp; Field Team</strong>.
-  </p>
+<body>
 
-  <p>
-    As a student-athlete, I was recognized for both academic and athletic
-    achievement, earning <strong>Academic Honor Roll</strong> honors for
-    <strong>4 consecutive semesters</strong> and receiving
-    <strong>1 All-American award</strong>.
-  </p>
-</section>
+    <section>
+        <h2>Education &amp; Athletics</h2>
+
+        <p>
+            I earned my <strong>Marketing degree from Iowa State University</strong>
+            with a <strong>Sales Certificate</strong>.
+        </p>
+
+        <p>
+            During my time at Iowa State, I also competed as a member of the
+            <strong>Iowa State Track &amp; Field Team</strong>.
+        </p>
+
+        <p>
+            As a student-athlete, I earned <strong>Academic Honor Roll</strong>
+            recognition for <strong>4 consecutive semesters</strong> and received
+            <strong>All-American honors</strong>.
+        </p>
+    </section>
+
+</body>
+</html>
