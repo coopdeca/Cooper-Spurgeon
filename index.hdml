@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Navigation is automatically added by nav.js -->
+
     <section>
+        <h1>Welcome to My Portfolio</h1>
+
         <h2>Education &amp; Athletics</h2>
 
         <p>
@@ -17,7 +24,7 @@
         </p>
 
         <p>
-            During my time at Iowa State, I also competed as a member of the
+            During my time at Iowa State, I competed as a member of the
             <strong>Iowa State Track &amp; Field Team</strong>.
         </p>
 
@@ -26,6 +33,13 @@
             recognition for <strong>4 consecutive semesters</strong> and received
             <strong>All-American honors</strong>.
         </p>
+    </section>
+
+    <script src="nav.js"></script>
+
+</body>
+</html>
+
     </section>
 
 </body>
