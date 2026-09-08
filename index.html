@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,15 +10,188 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Cooper Spurgeon | Portfolio</title>
+    <title>Cooper Spurgeon</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background-color: #aebfca;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #202b35;
+        }
+
+
+        /* =========================
+           MAIN WEBSITE
+           ========================= */
+
+        .site-wrapper {
+            width: 80%;
+
+            min-height: 100vh;
+
+            margin: 0 auto;
+
+            background-color: white;
+
+            box-shadow:
+                0 0 30px rgba(30, 50, 60, 0.18);
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        .site-nav {
+            width: 100%;
+
+            padding-top: 30px;
+            padding-bottom: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 45px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #202b35;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d95c4f;
+        }
+
+        .nav-links a.active {
+            color: #d95c4f;
+        }
+
+
+        /* =========================
+           NAME
+           ========================= */
+
+        .name-section {
+            text-align: center;
+
+            padding-top: 10px;
+        }
+
+        .name-section h1 {
+            font-size: 48px;
+
+            font-weight: 800;
+
+            color: #202b35;
+
+            letter-spacing: -1px;
+        }
+
+
+        /* =========================
+           YOUR PHOTO
+           ========================= */
+
+        .photo-section {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding-top: 25px;
+
+            padding-bottom: 60px;
+        }
+
+        .photo-section img {
+            width: 350px;
+
+            max-width: 80%;
+
+            height: auto;
+
+            display: block;
+
+            box-shadow:
+                0 15px 30px
+                rgba(30, 50, 60, 0.15);
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .site-wrapper {
+                width: 94%;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .name-section h1 {
+                font-size: 36px;
+            }
+
+            .photo-section img {
+                width: 300px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
     <div class="site-wrapper">
+
 
         <!-- =========================
              NAVIGATION
@@ -25,57 +199,9 @@
 
         <nav class="site-nav">
 
-            <!-- Logo / Name -->
-            <a href="index.html" class="nav-logo">
-                COOPER SPURGEON
-            </a>
-
-            <!-- Mobile Menu Button -->
-            <button
-                class="menu-toggle"
-                aria-label="Open navigation"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Navigation Links -->
             <ul class="nav-links">
 
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="projects.html">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="contact.html"
-                        class="nav-button"
-                    >
-                        Let's Talk
-                    </a>
-                </li>
+                <!-- Navigation is created by nav.js -->
 
             </ul>
 
@@ -83,128 +209,40 @@
 
 
         <!-- =========================
-             HERO SECTION
+             NAME
              ========================= -->
 
-        <main>
+        <section class="name-section">
 
-            <section class="hero">
+            <h1>
+                Cooper Spurgeon
+            </h1>
 
-                <!-- LEFT SIDE: TEXT -->
-                <div class="hero-content">
-
-                    <p class="hero-intro">
-                        Welcome to my portfolio
-                    </p>
-
-                    <h1 class="hero-title">
-                        <span>I'm</span>
-                        Cooper Spurgeon
-                    </h1>
-
-                    <p class="hero-description">
-                        I'm a designer and developer interested
-                        in creating clean, useful, and engaging
-                        digital experiences.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="projects.html"
-                            class="primary-button"
-                        >
-                            View My Work
-                        </a>
-
-                        <a
-                            href="about.html"
-                            class="secondary-button"
-                        >
-                            About Me
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RIGHT SIDE: YOUR PHOTO -->
-                <div class="hero-image">
-
-                    <img
-                        src="images/cooper.jpg"
-                        alt="Cooper Spurgeon"
-                    >
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
-                 INFORMATION SECTION
-                 ========================= -->
-
-            <section class="info-strip">
-
-                <div class="info-box">
-
-                    <h3>
-                        Designing With Purpose
-                    </h3>
-
-                    <p>
-                        I focus on creating simple,
-                        intuitive experiences that
-                        look good and work well.
-                    </p>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <h3>
-                        Any Type of Query
-                    </h3>
-
-                    <p>
-                        Have a project, idea, or question?
-                        I'd love to hear from you.
-                    </p>
-
-                </div>
-
-            </section>
-
-        </main>
+        </section>
 
 
         <!-- =========================
-             FOOTER
+             YOUR PICTURE
              ========================= -->
 
-        <footer class="site-footer">
+        <section class="photo-section">
 
-            <span>
-                © 2026 Cooper Spurgeon
-            </span>
+            <img
+                src="images/cooper.jpg"
+                alt="Cooper Spurgeon"
+            >
 
-            <span>
-                Designed & Built by Cooper
-            </span>
+        </section>
 
-        </footer>
 
     </div>
 
 
     <!-- =========================
-         JAVASCRIPT
+         NAVIGATION JAVASCRIPT
          ========================= -->
 
-    <script src="js/navigation.js"></script>
+    <script src="js/nav.js"></script>
 
 </body>
 
