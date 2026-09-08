@@ -1,14 +1,128 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.createElement("nav");
 
-    nav.innerHTML = `
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact.html">Contact</a>
-            <a href="hobbies.html">Hobbies</a>
-        </div>
-    `;
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    document.body.prepend(nav);
+
+    // =====================================
+    // MOBILE MENU
+    // =====================================
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("open");
+
+            const menuIsOpen =
+                navLinks.classList.contains("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+
+        });
+
+    }
+
+
+    // =====================================
+    // AUTOMATIC ACTIVE PAGE
+    // =====================================
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+
+    if (navLinks) {
+
+        const navigationItems =
+            navLinks.querySelectorAll("a");
+
+
+        navigationItems.forEach(function (link) {
+
+            const linkPage =
+                link.getAttribute("href")
+                    .split("/")
+                    .pop()
+                    .toLowerCase();
+
+
+            if (
+                linkPage === currentPage ||
+                (
+                    currentPage === "" &&
+                    linkPage === "index.html"
+                )
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    // =====================================
+    // CLOSE MENU AFTER CLICKING A LINK
+    // =====================================
+
+    if (navLinks) {
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove("open");
+
+                        if (menuToggle) {
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    // =====================================
+    // ESCAPE KEY CLOSES MOBILE MENU
+    // =====================================
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                navLinks?.classList.remove("open");
+
+                menuToggle?.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
 });
