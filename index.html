@@ -1,249 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav class="site-nav">
 
-<head>
+    <a href="index.html" class="nav-logo">
+        COOPER SPURGEON
+    </a>
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
+    <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
     >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <title>Cooper Spurgeon</title>
+    <ul class="nav-links">
 
-    <style>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
 
-        /* =========================
-           PAGE
-           ========================= */
+        <li>
+            <a href="about.html">About</a>
+        </li>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        <li>
+            <a href="projects.html">Projects</a>
+        </li>
 
-        body {
-            min-height: 100vh;
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
 
-            background-color: #aebfca;
+        <li>
+            <a href="contact.html" class="nav-button">
+                Let's Talk
+            </a>
+        </li>
 
-            font-family: Arial, Helvetica, sans-serif;
+    </ul>
 
-            color: #202b35;
-        }
-
-
-        /* =========================
-           MAIN WEBSITE
-           ========================= */
-
-        .site-wrapper {
-            width: 80%;
-
-            min-height: 100vh;
-
-            margin: 0 auto;
-
-            background-color: white;
-
-            box-shadow:
-                0 0 30px rgba(30, 50, 60, 0.18);
-        }
-
-
-        /* =========================
-           NAVIGATION
-           ========================= */
-
-        .site-nav {
-            width: 100%;
-
-            padding-top: 30px;
-            padding-bottom: 20px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 45px;
-
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #202b35;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            transition: color 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: #d95c4f;
-        }
-
-        .nav-links a.active {
-            color: #d95c4f;
-        }
-
-
-        /* =========================
-           NAME
-           ========================= */
-
-        .name-section {
-            text-align: center;
-
-            padding-top: 10px;
-        }
-
-        .name-section h1 {
-            font-size: 48px;
-
-            font-weight: 800;
-
-            color: #202b35;
-
-            letter-spacing: -1px;
-        }
-
-
-        /* =========================
-           YOUR PHOTO
-           ========================= */
-
-        .photo-section {
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding-top: 25px;
-
-            padding-bottom: 60px;
-        }
-
-        .photo-section img {
-            width: 350px;
-
-            max-width: 80%;
-
-            height: auto;
-
-            display: block;
-
-            box-shadow:
-                0 15px 30px
-                rgba(30, 50, 60, 0.15);
-        }
-
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 700px) {
-
-            .site-wrapper {
-                width: 94%;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-            .name-section h1 {
-                font-size: 36px;
-            }
-
-            .photo-section img {
-                width: 300px;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-    <div class="site-wrapper">
-
-
-        <!-- =========================
-             NAVIGATION
-             ========================= -->
-
-        <nav class="site-nav">
-
-            <ul class="nav-links">
-
-                <!-- Navigation is created by nav.js -->
-
-            </ul>
-
-        </nav>
-
-
-        <!-- =========================
-             NAME
-             ========================= -->
-
-        <section class="name-section">
-
-            <h1>
-                Cooper Spurgeon
-            </h1>
-
-        </section>
-
-
-        <!-- =========================
-             YOUR PICTURE
-             ========================= -->
-
-        <section class="photo-section">
-
-            <img
-                src="images/cooper.jpg"
-                alt="Cooper Spurgeon"
-            >
-
-        </section>
-
-
-    </div>
-
-
-    <!-- =========================
-         NAVIGATION JAVASCRIPT
-         ========================= -->
-
-    <script src="js/nav.js"></script>
-
-</body>
-
-</html>
+</nav>
