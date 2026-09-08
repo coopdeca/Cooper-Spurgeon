@@ -1,128 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+    const nav = document.querySelector(".nav-links");
 
-
-    // =====================================
-    // MOBILE MENU
-    // =====================================
-
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", function () {
-
-            navLinks.classList.toggle("open");
-
-            const menuIsOpen =
-                navLinks.classList.contains("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                menuIsOpen
-            );
-
-        });
-
+    if (!nav) {
+        return;
     }
 
 
     // =====================================
-    // AUTOMATIC ACTIVE PAGE
+    // NAVIGATION
     // =====================================
 
-    const currentPage =
+    const navigation = [
+        {
+            name: "Home",
+            page: "index.html"
+        },
+        {
+            name: "About",
+            page: "about.html"
+        },
+        {
+            name: "Experience",
+            page: "experience.html"
+        },
+        {
+            name: "Contact",
+            page: "contact.html"
+        }
+    ];
+
+
+    // =====================================
+    // CREATE NAVIGATION LINKS
+    // =====================================
+
+    navigation.forEach(function (item) {
+
+        const listItem = document.createElement("li");
+
+        const link = document.createElement("a");
+
+        link.textContent = item.name;
+
+        link.href = item.page;
+
+
+        // Add link to navigation
+
+        listItem.appendChild(link);
+
+        nav.appendChild(listItem);
+
+    });
+
+
+    // =====================================
+    // FIND CURRENT PAGE
+    // =====================================
+
+    let currentPage =
         window.location.pathname
             .split("/")
             .pop()
             .toLowerCase();
 
 
-    if (navLinks) {
+    // GitHub Pages sometimes loads
+    // the homepage without index.html
 
-        const navigationItems =
-            navLinks.querySelectorAll("a");
-
-
-        navigationItems.forEach(function (link) {
-
-            const linkPage =
-                link.getAttribute("href")
-                    .split("/")
-                    .pop()
-                    .toLowerCase();
-
-
-            if (
-                linkPage === currentPage ||
-                (
-                    currentPage === "" &&
-                    linkPage === "index.html"
-                )
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
+    if (currentPage === "") {
+        currentPage = "index.html";
     }
 
 
     // =====================================
-    // CLOSE MENU AFTER CLICKING A LINK
+    // HIGHLIGHT CURRENT PAGE
     // =====================================
 
-    if (navLinks) {
+    const links = nav.querySelectorAll("a");
 
-        navLinks
-            .querySelectorAll("a")
-            .forEach(function (link) {
+    links.forEach(function (link) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.classList.remove("open");
-
-                        if (menuToggle) {
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                        }
-
-                    }
-                );
-
-            });
-
-    }
+        const linkPage =
+            link.getAttribute("href")
+                .toLowerCase();
 
 
-    // =====================================
-    // ESCAPE KEY CLOSES MOBILE MENU
-    // =====================================
+        if (linkPage === currentPage) {
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                navLinks?.classList.remove("open");
-
-                menuToggle?.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
+            link.classList.add("active");
 
         }
-    );
+
+    });
 
 });
