@@ -1,0 +1,384 @@
+/* =========================================
+   COOPER SPURGEON PORTFOLIO
+   ========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background-color: #aebfca;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #202b35;
+}
+
+
+/* =========================================
+   MAIN WEBSITE
+   ========================================= */
+
+.site-wrapper {
+
+    width: 80%;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0 30px
+        rgba(30, 50, 60, 0.18);
+
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.site-nav {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding-top: 35px;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        1px solid #e5e9ec;
+
+}
+
+
+/* Navigation list */
+
+.nav-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 55px;
+
+    list-style: none;
+
+}
+
+
+/* Navigation links */
+
+.nav-links a {
+
+    display: block;
+
+    color: #202b35;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    padding: 5px 0;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+
+    color: #c8102e;
+
+}
+
+
+/* Current page */
+
+.nav-links a.active {
+
+    color: #c8102e;
+
+}
+
+
+/* =========================================
+   NAME
+   ========================================= */
+
+.name-section {
+
+    text-align: center;
+
+    padding-top: 45px;
+
+    padding-bottom: 20px;
+
+}
+
+
+.name-section h1 {
+
+    font-size: 52px;
+
+    font-weight: 800;
+
+    color: #202b35;
+
+    letter-spacing: -1px;
+
+}
+
+
+/* =========================================
+   COOPER'S PHOTO
+   ========================================= */
+
+.photo-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding-top: 15px;
+
+    padding-bottom: 45px;
+
+}
+
+
+.photo-section img {
+
+    width: 350px;
+
+    max-width: 80%;
+
+    height: auto;
+
+    display: block;
+
+    box-shadow:
+        0 15px 30px
+        rgba(30, 50, 60, 0.18);
+
+}
+
+
+/* =========================================
+   IOWA STATE SECTION
+   ========================================= */
+
+.iowa-state-section {
+
+    text-align: center;
+
+    padding-top: 10px;
+
+    padding-bottom: 70px;
+
+}
+
+
+/* Fake/simple Iowa State-style logo */
+
+.iowa-state-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 28px;
+
+    border: 3px solid #c8102e;
+
+    color: #c8102e;
+
+    background-color: #ffffff;
+
+}
+
+
+/* ISU */
+
+.cardinal {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    color: #c8102e;
+
+}
+
+
+/* Iowa State text */
+
+.iowa-state-text {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: #c8102e;
+
+}
+
+
+/* University text */
+
+.iowa-state-section p {
+
+    margin-top: 15px;
+
+    color: #687681;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+    border-top:
+        1px solid #e5e9ec;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #687681;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .site-wrapper {
+
+        width: 94%;
+
+    }
+
+
+    .site-nav {
+
+        padding-top: 25px;
+
+        padding-bottom: 20px;
+
+    }
+
+
+    .nav-links {
+
+        gap: 22px;
+
+    }
+
+
+    .nav-links a {
+
+        font-size: 12px;
+
+    }
+
+
+    .name-section {
+
+        padding-top: 35px;
+
+    }
+
+
+    .name-section h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .photo-section img {
+
+        width: 300px;
+
+    }
+
+
+    .iowa-state-logo {
+
+        padding: 14px 20px;
+
+    }
+
+
+    .cardinal {
+
+        font-size: 32px;
+
+    }
+
+
+    .iowa-state-text {
+
+        font-size: 19px;
+
+    }
+
+}
