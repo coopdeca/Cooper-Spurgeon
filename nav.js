@@ -1,128 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
+    // Get all navigation links
+    const navLinks =
+        document.querySelectorAll(".nav-links a");
 
 
-    /* ================================
-       MOBILE MENU
-       ================================ */
-
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", function () {
-
-            navLinks.classList.toggle("open");
-
-            const menuIsOpen =
-                navLinks.classList.contains("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                menuIsOpen
-            );
-
-        });
-    }
-
-
-    /* ================================
-       AUTOMATIC ACTIVE PAGE
-       ================================ */
-
-    const currentPage =
+    // Get the current page
+    let currentPage =
         window.location.pathname
             .split("/")
             .pop()
             .toLowerCase();
 
 
-    if (navLinks) {
+    // If GitHub Pages doesn't show index.html,
+    // treat the page as Home
+    if (currentPage === "") {
 
-        const navigationItems =
-            navLinks.querySelectorAll("a");
-
-
-        navigationItems.forEach(function (link) {
-
-            const linkPage =
-                link.getAttribute("href")
-                    .split("/")
-                    .pop()
-                    .toLowerCase();
-
-
-            if (
-                linkPage === currentPage ||
-                (
-                    currentPage === "" &&
-                    linkPage === "index.html"
-                )
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
+        currentPage = "index.html";
 
     }
 
 
-    /* ================================
-       CLOSE MOBILE MENU
-       AFTER CLICKING A LINK
-       ================================ */
+    // Highlight the current page
+    navLinks.forEach(function (link) {
 
-    if (navLinks) {
-
-        navLinks
-            .querySelectorAll("a")
-            .forEach(function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.classList.remove("open");
-
-                        if (menuToggle) {
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-
-                        }
-
-                    }
-                );
-
-            });
-
-    }
+        const linkPage =
+            link.getAttribute("href")
+                .split("/")
+                .pop()
+                .toLowerCase();
 
 
-    /* ================================
-       ESCAPE KEY CLOSES MENU
-       ================================ */
+        if (linkPage === currentPage) {
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                navLinks?.classList.remove("open");
-
-                menuToggle?.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
+            link.classList.add("active");
 
         }
-    );
+
+    });
 
 });
