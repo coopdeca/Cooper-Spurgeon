@@ -1,46 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>Cooper Spurgeon | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Navigation is automatically added by nav.js -->
+    <div class="site-wrapper">
 
-    <section>
-        <h1>Welcome to My Portfolio</h1>
+        <!-- =========================
+             NAVIGATION
+             ========================= -->
 
-        <h2>Education &amp; Athletics</h2>
+        <nav class="site-nav">
 
-        <p>
-            I earned my <strong>Marketing degree from Iowa State University</strong>
-            with a <strong>Sales Certificate</strong>.
-        </p>
+            <!-- Logo / Name -->
+            <a href="index.html" class="nav-logo">
+                COOPER SPURGEON
+            </a>
 
-        <p>
-            During my time at Iowa State, I competed as a member of the
-            <strong>Iowa State Track &amp; Field Team</strong>.
-        </p>
+            <!-- Mobile Menu Button -->
+            <button
+                class="menu-toggle"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <p>
-            As a student-athlete, I earned <strong>Academic Honor Roll</strong>
-            recognition for <strong>4 consecutive semesters</strong> and received
-            <strong>All-American honors</strong>.
-        </p>
-    </section>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
 
-    <script src="nav.js"></script>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-button"
+                    >
+                        Let's Talk
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- =========================
+             HERO SECTION
+             ========================= -->
+
+        <main>
+
+            <section class="hero">
+
+                <!-- LEFT SIDE: TEXT -->
+                <div class="hero-content">
+
+                    <p class="hero-intro">
+                        Welcome to my portfolio
+                    </p>
+
+                    <h1 class="hero-title">
+                        <span>I'm</span>
+                        Cooper Spurgeon
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm a designer and developer interested
+                        in creating clean, useful, and engaging
+                        digital experiences.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="projects.html"
+                            class="primary-button"
+                        >
+                            View My Work
+                        </a>
+
+                        <a
+                            href="about.html"
+                            class="secondary-button"
+                        >
+                            About Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE: YOUR PHOTO -->
+                <div class="hero-image">
+
+                    <img
+                        src="images/cooper.jpg"
+                        alt="Cooper Spurgeon"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INFORMATION SECTION
+                 ========================= -->
+
+            <section class="info-strip">
+
+                <div class="info-box">
+
+                    <h3>
+                        Designing With Purpose
+                    </h3>
+
+                    <p>
+                        I focus on creating simple,
+                        intuitive experiences that
+                        look good and work well.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>
+                        Any Type of Query
+                    </h3>
+
+                    <p>
+                        Have a project, idea, or question?
+                        I'd love to hear from you.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             FOOTER
+             ========================= -->
+
+        <footer class="site-footer">
+
+            <span>
+                © 2026 Cooper Spurgeon
+            </span>
+
+            <span>
+                Designed & Built by Cooper
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="js/navigation.js"></script>
 
 </body>
-</html>
 
-    </section>
-
-</body>
 </html>
