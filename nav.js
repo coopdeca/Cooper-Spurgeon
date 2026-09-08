@@ -1,98 +1,128 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const nav = document.querySelector(".nav-links");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    if (!nav) {
-        return;
+
+    /* ================================
+       MOBILE MENU
+       ================================ */
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("open");
+
+            const menuIsOpen =
+                navLinks.classList.contains("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+
+        });
     }
 
 
-    // =====================================
-    // NAVIGATION
-    // =====================================
+    /* ================================
+       AUTOMATIC ACTIVE PAGE
+       ================================ */
 
-    const navigation = [
-        {
-            name: "Home",
-            page: "index.html"
-        },
-        {
-            name: "About",
-            page: "about.html"
-        },
-        {
-            name: "Experience",
-            page: "experience.html"
-        },
-        {
-            name: "Contact",
-            page: "contact.html"
-        }
-    ];
-
-
-    // =====================================
-    // CREATE NAVIGATION LINKS
-    // =====================================
-
-    navigation.forEach(function (item) {
-
-        const listItem = document.createElement("li");
-
-        const link = document.createElement("a");
-
-        link.textContent = item.name;
-
-        link.href = item.page;
-
-
-        // Add link to navigation
-
-        listItem.appendChild(link);
-
-        nav.appendChild(listItem);
-
-    });
-
-
-    // =====================================
-    // FIND CURRENT PAGE
-    // =====================================
-
-    let currentPage =
+    const currentPage =
         window.location.pathname
             .split("/")
             .pop()
             .toLowerCase();
 
 
-    // GitHub Pages sometimes loads
-    // the homepage without index.html
+    if (navLinks) {
 
-    if (currentPage === "") {
-        currentPage = "index.html";
+        const navigationItems =
+            navLinks.querySelectorAll("a");
+
+
+        navigationItems.forEach(function (link) {
+
+            const linkPage =
+                link.getAttribute("href")
+                    .split("/")
+                    .pop()
+                    .toLowerCase();
+
+
+            if (
+                linkPage === currentPage ||
+                (
+                    currentPage === "" &&
+                    linkPage === "index.html"
+                )
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
     }
 
 
-    // =====================================
-    // HIGHLIGHT CURRENT PAGE
-    // =====================================
+    /* ================================
+       CLOSE MOBILE MENU
+       AFTER CLICKING A LINK
+       ================================ */
 
-    const links = nav.querySelectorAll("a");
+    if (navLinks) {
 
-    links.forEach(function (link) {
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
 
-        const linkPage =
-            link.getAttribute("href")
-                .toLowerCase();
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove("open");
+
+                        if (menuToggle) {
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+    }
 
 
-        if (linkPage === currentPage) {
+    /* ================================
+       ESCAPE KEY CLOSES MENU
+       ================================ */
 
-            link.classList.add("active");
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                navLinks?.classList.remove("open");
+
+                menuToggle?.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         }
-
-    });
+    );
 
 });
