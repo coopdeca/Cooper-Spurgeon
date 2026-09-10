@@ -11,7 +11,7 @@ body {
 }
 
 /* =========================
-   WEBSITE AREA
+   PAGE LAYOUT (WIREFRAME STRUCTURE)
    ========================= */
 
 .page {
@@ -19,50 +19,52 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     background: white;
-    text-align: center;
-    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   HEADER / TOP SECTION
+   ========================= */
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
     position: relative;
 }
 
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
 
-/* =========================
-   IOWA STATE LOGO
-   ========================= */
-
-.isu-logo {
-    position: absolute;
-    top: 25px;
-    left: 30px;
-
+.logo {
     width: 90px;
     height: auto;
 }
 
-
-/* =========================
-   NAVIGATION
-   ========================= */
-
+/* Primary Navigation */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 50px;
-
-    margin-bottom: 45px;
+    margin: 20px auto;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: #202b35;
-
     text-decoration: none;
-
     font-size: 16px;
-
     font-weight: bold;
-
     transition: 0.2s;
+    padding: 8px 12px;
 }
 
 nav a:hover {
@@ -71,204 +73,355 @@ nav a:hover {
 
 nav a.active {
     color: #c8102e;
+    border-bottom: 3px solid #c8102e;
 }
 
+/* Secondary Navigation (if needed) */
+.secondary-nav {
+    text-align: center;
+    padding: 10px;
+    background: #f5f5f5;
+    font-size: 14px;
+    display: none;
+}
+
+.secondary-nav a {
+    color: #666;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.secondary-nav a:hover {
+    color: #c8102e;
+}
 
 /* =========================
-   HEADINGS
+   MAIN CONTENT AREA
    ========================= */
 
-h1 {
+.container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 30px;
+    padding: 40px 30px;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.main-content h1 {
     font-size: 52px;
-
     font-weight: 900;
-
     margin-bottom: 35px;
+    color: #202b35;
 }
 
+.main-content h2 {
+    color: #c8102e;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+}
+
+.content {
+    width: 100%;
+    text-align: left;
+}
+
+/* Content Blocks */
+.content-block {
+    margin-bottom: 40px;
+}
 
 /* =========================
-   HOME PHOTO
+   SIDEBAR (STICKY)
    ========================= */
 
-.cooper-photo {
-    width: 350px;
-
-    max-width: 80%;
-
-    height: auto;
-
-    display: block;
-
-    margin: 0 auto 45px auto;
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.15);
+aside.sidebar {
+    width: 280px;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    border-radius: 8px;
 }
 
+.sidebar h3 {
+    font-size: 16px;
+    color: #c8102e;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sidebar-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.sidebar-item a {
+    color: #c8102e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar-item a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.sidebar-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #c8102e;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.sidebar-icons a:hover {
+    background: #a00827;
+    transform: scale(1.1);
+}
 
 /* =========================
-   IOWA STATE
+   FOOTER
+   ========================= */
+
+footer {
+    background: #2b3e4a;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: auto;
+    border-top: 4px solid #c8102e;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #c8102e;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    font-size: 12px;
+}
+
+/* =========================
+   HOME PAGE SPECIFIC
    ========================= */
 
 .iowa-state {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 15px;
-
     border: 4px solid #c8102e;
-
     padding: 15px 25px;
-
     color: #c8102e;
-
-    margin-bottom: 50px;
+    margin: 30px 0;
 }
 
 .isu {
     font-family: Georgia, serif;
-
     font-size: 42px;
-
     font-weight: 900;
 }
 
 .isu-name {
     font-family: Georgia, serif;
-
     font-size: 25px;
-
     font-weight: 900;
 }
 
-
-/* =========================
-   ABOUT / GENERAL CONTENT
-   ========================= */
-
-.content {
-    width: 70%;
-    max-width: 800px;
-
-    margin: 0 auto;
-
-    text-align: left;
+.cooper-photo {
+    width: 350px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 45px auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.content p {
-    font-size: 20px;
-
-    line-height: 1.7;
-}
-
-
 /* =========================
-   CONTACT
+   CONTACT PAGE SPECIFIC
    ========================= */
 
 .contact-section {
-    width: 80%;
-    max-width: 850px;
-
-    margin: 0 auto;
-
     display: flex;
-
     align-items: flex-start;
-
     gap: 50px;
-
     text-align: left;
 }
 
 .contact-photo {
     width: 300px;
-
     height: auto;
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.contact-info {
-    padding-top: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .contact-info p {
-    font-size: 20px;
-
+    font-size: 18px;
     line-height: 1.6;
-
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-
 /* =========================
-   EXPERIENCE
+   EXPERIENCE PAGE SPECIFIC
    ========================= */
 
 .experience-section {
-    width: 75%;
-    max-width: 850px;
-
-    margin: 0 auto;
-
     text-align: left;
+}
+
+.experience-item {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
 }
 
 .experience-section h2 {
     color: #c8102e;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
 
-    font-size: 30px;
-
-    margin-bottom: 20px;
+.experience-section .job-title {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-style: italic;
 }
 
 .experience-section p {
-    font-size: 19px;
-
+    font-size: 16px;
     line-height: 1.7;
-
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-
 /* =========================
-   PHONE
+   RESPONSIVE DESIGN
    ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
 
+    aside.sidebar {
+        width: 100%;
+        position: static;
+    }
+}
+
+@media (max-width: 700px) {
     .page {
         width: 94%;
     }
 
-    .isu-logo {
+    .logo {
         width: 65px;
-
-        top: 20px;
-        left: 15px;
     }
 
     nav {
         gap: 20px;
-
         flex-wrap: wrap;
-
-        padding-left: 40px;
-        padding-right: 20px;
+        padding: 0 20px;
     }
 
     nav a {
         font-size: 13px;
+        padding: 6px 8px;
     }
 
-    h1 {
+    .main-content h1 {
         font-size: 38px;
+        margin-bottom: 25px;
+    }
+
+    .main-content h2 {
+        font-size: 24px;
+    }
+
+    .main-content p {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .hero-image {
+        max-height: 250px;
     }
 
     .cooper-photo {
@@ -287,24 +440,11 @@ h1 {
         font-size: 18px;
     }
 
-    .content {
-        width: 85%;
-    }
-
-    .content p {
-        font-size: 17px;
-    }
-
     .contact-section {
-        width: 85%;
-
         flex-direction: column;
-
         align-items: center;
-
         text-align: center;
-
-        gap: 25px;
+        gap: 20px;
     }
 
     .contact-photo {
@@ -312,14 +452,66 @@ h1 {
     }
 
     .contact-info p {
-        font-size: 17px;
-    }
-
-    .experience-section {
-        width: 85%;
+        font-size: 16px;
     }
 
     .experience-section p {
-        font-size: 17px;
+        font-size: 15px;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .footer-links {
+        gap: 10px;
+    }
+
+    .sidebar-icons {
+        gap: 10px;
+    }
+
+    .sidebar-icons a {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-content h1 {
+        font-size: 32px;
+    }
+
+    nav {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .iowa-state {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .isu {
+        font-size: 28px;
+    }
+
+    .isu-name {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px 10px;
     }
 }
