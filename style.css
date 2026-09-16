@@ -1,70 +1,69 @@
+/* =========================
+   GENERAL PAGE STYLING
+   ========================= */
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #aebfca;
-    font-family: Arial, sans-serif;
-    color: #202b35;
+    margin: 0;
+    padding: 30px 0;
+    background-color: #aebfca;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
 }
-
-/* =========================
-   PAGE LAYOUT (WIREFRAME STRUCTURE)
-   ========================= */
 
 .page {
     width: 80%;
-    min-height: 100vh;
+    max-width: 1200px;
     margin: 0 auto;
-    background: white;
-    display: flex;
-    flex-direction: column;
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+
 /* =========================
-   HEADER / TOP SECTION
+   HEADER
    ========================= */
 
 header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-    position: relative;
+    background-color: white;
 }
 
 .header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px;
+    padding: 20px 30px 10px;
+    border-bottom: 4px solid #c8102e;
 }
 
 .logo {
-    width: 90px;
+    width: 110px;
     height: auto;
+    display: block;
 }
 
-/* Primary Navigation */
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    margin: 20px auto;
+    gap: 30px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #ddd;
     flex-wrap: wrap;
 }
 
 nav a {
-    color: #202b35;
     text-decoration: none;
-    font-size: 16px;
+    color: #222;
     font-weight: bold;
-    transition: 0.2s;
-    padding: 8px 12px;
+    padding: 7px 4px;
+    transition: 0.2s ease;
 }
 
 nav a:hover {
@@ -73,113 +72,120 @@ nav a:hover {
 
 nav a.active {
     color: #c8102e;
-    border-bottom: 3px solid #c8102e;
+    border-bottom: 3px solid #f1be48;
 }
 
-/* Secondary Navigation (if needed) */
-.secondary-nav {
-    text-align: center;
-    padding: 10px;
-    background: #f5f5f5;
-    font-size: 14px;
-    display: none;
-}
-
-.secondary-nav a {
-    color: #666;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-.secondary-nav a:hover {
-    color: #c8102e;
-}
 
 /* =========================
-   MAIN CONTENT AREA
+   MAIN CONTENT LAYOUT
    ========================= */
 
 .container {
     display: flex;
-    flex: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    gap: 30px;
-    padding: 40px 30px;
+    align-items: flex-start;
 }
 
 .main-content {
-    flex: 1;
-    min-width: 0;
+    width: 72%;
+    padding: 40px;
 }
 
 .main-content h1 {
-    font-size: 52px;
-    font-weight: 900;
-    margin-bottom: 35px;
-    color: #202b35;
-}
-
-.main-content h2 {
-    color: #c8102e;
-    font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.main-content p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.hero-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+    text-align: center;
+    font-size: 42px;
+    margin-top: 0;
     margin-bottom: 30px;
-    border: 1px solid #e0e0e0;
+    color: #222;
 }
 
 .content {
-    width: 100%;
-    text-align: left;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
-/* Content Blocks */
-.content-block {
-    margin-bottom: 40px;
+.content h2 {
+    color: #c8102e;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
+
+.content h2:first-child {
+    margin-top: 0;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
 
 /* =========================
-   SIDEBAR (STICKY)
+   HOME PAGE PHOTO
    ========================= */
 
-aside.sidebar {
-    width: 280px;
-    background: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    position: sticky;
-    top: 20px;
-    height: fit-content;
-    border-radius: 8px;
+.cooper-photo {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 25px;
+    border: 5px solid #c8102e;
+}
+
+.contact-photo {
+    float: left;
+    margin: 0 30px 20px 0;
+    width: 220px;
+}
+
+
+/* =========================
+   IOWA STATE BLOCK
+   ========================= */
+
+.iowa-state {
+    text-align: center;
+    margin: 25px auto 35px;
+}
+
+.isu {
+    font-size: 58px;
+    font-weight: bold;
+    color: #c8102e;
+    line-height: 1;
+}
+
+.isu-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.sidebar {
+    width: 28%;
+    background-color: #f4f4f4;
+    border-left: 4px solid #c8102e;
+    padding: 30px 25px;
+    min-height: 500px;
 }
 
 .sidebar h3 {
-    font-size: 16px;
     color: #c8102e;
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
 }
 
 .sidebar-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 15px;
+    margin-bottom: 18px;
 }
 
 .sidebar-item:last-child {
@@ -187,331 +193,333 @@ aside.sidebar {
 }
 
 .sidebar-item p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
+    line-height: 1.5;
+    margin: 0;
 }
 
-.sidebar-item a {
+.sidebar a {
     color: #c8102e;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.sidebar-item a:hover {
+.sidebar a:hover {
     text-decoration: underline;
 }
 
-.sidebar-icons {
+
+/* =========================
+   REGISTER BUTTON
+   ========================= */
+
+.register-button {
+    display: inline-block;
+    background-color: #c8102e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 25px;
+    margin-top: 15px;
+    border-radius: 4px;
+    border-bottom: 4px solid #f1be48;
+    transition: 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #a80d27;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   ABOUT PAGE ACTION PHOTOS
+   ========================= */
+
+.action-photos {
     display: flex;
-    gap: 15px;
     justify-content: center;
+    gap: 25px;
+    margin: 35px 0;
+}
+
+.action-photo {
+    width: 46%;
+    text-align: center;
+}
+
+.action-photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border: 4px solid #c8102e;
+}
+
+.action-photo p {
+    font-weight: bold;
+    color: #c8102e;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   CAMP DATES
+   ========================= */
+
+.camp-dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.date-card {
+    background-color: #f4f4f4;
+    border-left: 5px solid #c8102e;
+    border-bottom: 3px solid #f1be48;
+    padding: 18px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/* =========================
+   SESSION INFORMATION
+   ========================= */
+
+.session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.session {
+    background-color: #f4f4f4;
+    border-left: 5px solid #c8102e;
+    padding: 15px 20px;
+}
+
+.session h3 {
+    margin: 0 0 5px;
+    color: #c8102e;
+}
+
+.session p {
+    margin: 0;
+}
+
+
+/* =========================
+   CAMP LISTS
+   ========================= */
+
+.camp-list {
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+.camp-list li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   REGISTRATION BOX
+   ========================= */
+
+.registration-box {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f4f4f4;
+    border-left: 6px solid #c8102e;
+    border-bottom: 4px solid #f1be48;
+}
+
+.registration-box h2 {
+    margin-top: 0;
+}
+
+.registration-note {
+    font-size: 14px;
+    color: #666;
     margin-top: 15px;
 }
 
-.sidebar-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #c8102e;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
-    transition: 0.2s;
+
+/* =========================
+   CONTACT INFORMATION
+   ========================= */
+
+.contact-info {
+    background-color: #f4f4f4;
+    border-left: 5px solid #c8102e;
+    padding: 20px 25px;
+    margin: 25px 0;
 }
 
-.sidebar-icons a:hover {
-    background: #a00827;
-    transform: scale(1.1);
+.contact-info p {
+    margin-bottom: 18px;
 }
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: #c8102e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 
 /* =========================
    FOOTER
    ========================= */
 
 footer {
-    background: #2b3e4a;
-    color: white;
-    padding: 30px;
+    clear: both;
     text-align: center;
-    margin-top: auto;
-    border-top: 4px solid #c8102e;
+    background-color: #222;
+    color: white;
+    padding: 25px 20px;
+    margin-top: 30px;
+    border-top: 5px solid #c8102e;
 }
 
 footer p {
-    font-size: 13px;
-    margin: 8px 0;
-    line-height: 1.6;
-}
-
-footer a {
-    color: #c8102e;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    margin: 5px 0;
 }
 
 .footer-links {
     margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 .footer-links a {
-    font-size: 12px;
+    color: #f1be48;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
 }
 
-/* =========================
-   HOME PAGE SPECIFIC
-   ========================= */
-
-.iowa-state {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    border: 4px solid #c8102e;
-    padding: 15px 25px;
-    color: #c8102e;
-    margin: 30px 0;
+.footer-links a:hover {
+    color: white;
 }
 
-.isu {
-    font-family: Georgia, serif;
-    font-size: 42px;
-    font-weight: 900;
-}
-
-.isu-name {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    font-weight: 900;
-}
-
-.cooper-photo {
-    width: 350px;
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto 45px auto;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* =========================
-   CONTACT PAGE SPECIFIC
-   ========================= */
-
-.contact-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    text-align: left;
-}
-
-.contact-photo {
-    width: 300px;
-    height: auto;
-    flex-shrink: 0;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.contact-info p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   EXPERIENCE PAGE SPECIFIC
-   ========================= */
-
-.experience-section {
-    text-align: left;
-}
-
-.experience-item {
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.experience-item:last-child {
-    border-bottom: none;
-}
-
-.experience-section h2 {
-    color: #c8102e;
-    font-size: 26px;
-    margin-bottom: 8px;
-}
-
-.experience-section .job-title {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.experience-section p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
 
 /* =========================
    RESPONSIVE DESIGN
    ========================= */
 
-@media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        gap: 30px;
+@media (max-width: 850px) {
+
+    body {
+        padding: 0;
     }
 
-    aside.sidebar {
-        width: 100%;
-        position: static;
-    }
-}
-
-@media (max-width: 700px) {
     .page {
-        width: 94%;
+        width: 100%;
+        box-shadow: none;
     }
 
-    .logo {
-        width: 65px;
+    .container {
+        display: block;
     }
 
-    nav {
-        gap: 20px;
-        flex-wrap: wrap;
-        padding: 0 20px;
+    .main-content {
+        width: 100%;
+        padding: 30px;
     }
 
-    nav a {
-        font-size: 13px;
-        padding: 6px 8px;
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        border-left: none;
+        border-top: 4px solid #c8102e;
     }
 
     .main-content h1 {
-        font-size: 38px;
-        margin-bottom: 25px;
+        font-size: 34px;
     }
 
-    .main-content h2 {
-        font-size: 24px;
+    nav {
+        gap: 18px;
     }
 
-    .main-content p {
-        font-size: 16px;
-    }
-
-    .container {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;
-    }
-
-    .hero-image {
-        max-height: 250px;
-    }
-
-    .cooper-photo {
-        width: 300px;
-    }
-
-    .iowa-state {
-        padding: 12px 18px;
-    }
-
-    .isu {
-        font-size: 30px;
-    }
-
-    .isu-name {
-        font-size: 18px;
-    }
-
-    .contact-section {
+    .action-photos {
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        gap: 20px;
+    }
+
+    .action-photo {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .camp-dates {
+        grid-template-columns: 1fr;
     }
 
     .contact-photo {
-        width: 250px;
-    }
-
-    .contact-info p {
-        font-size: 16px;
-    }
-
-    .experience-section p {
-        font-size: 15px;
-    }
-
-    footer {
-        padding: 20px 15px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
-
-    .footer-links {
-        gap: 10px;
-    }
-
-    .sidebar-icons {
-        gap: 10px;
-    }
-
-    .sidebar-icons a {
-        width: 36px;
-        height: 36px;
-        line-height: 36px;
-        font-size: 16px;
+        float: none;
+        margin: 0 auto 25px;
     }
 }
 
+
 @media (max-width: 500px) {
-    .main-content h1 {
-        font-size: 32px;
+
+    .header-top {
+        padding: 15px 20px 10px;
+    }
+
+    .logo {
+        width: 90px;
     }
 
     nav {
-        gap: 15px;
-        padding: 0 10px;
+        gap: 10px;
+        padding: 12px 10px;
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 14px;
     }
 
-    .iowa-state {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 15px;
+    .main-content {
+        padding: 25px 20px;
     }
 
-    .isu {
-        font-size: 28px;
+    .main-content h1 {
+        font-size: 29px;
     }
 
-    .isu-name {
+    .content {
         font-size: 16px;
     }
 
-    .container {
-        padding: 15px 10px;
+    .cooper-photo {
+        width: 210px;
+    }
+
+    .action-photo img {
+        height: 220px;
+    }
+
+    .registration-box {
+        padding: 20px;
+    }
+
+    .register-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 8px 0;
     }
 }
